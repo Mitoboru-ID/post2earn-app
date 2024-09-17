@@ -12,7 +12,7 @@ export const initAuth = async () => {
 export const login = async () => {
   const authClient = await AuthClient.create();
   await authClient.login({
-    identityProvider: process.env.II_URL || "https://identity.ic0.app",
+    identityProvider: `http://${process.env.CANISTER_ID_INTERNET_IDENTITY}.localhost:4943/` || "https://identity.ic0.app",
     onSuccess: () => {
       window.location.reload();
     },
