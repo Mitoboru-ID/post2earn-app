@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "post2earn-apps-backend": {
+      "main": "src/post2earn-apps-backend/main.mo",
+      "type": "motoko"
+    },
+    "post2earn-apps-frontend": {
+      "dependencies": [
+        "post2earn-apps-backend"
+      ],
+      "source": [
+        "src/post2earn-apps-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "post2earn-apps-frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
