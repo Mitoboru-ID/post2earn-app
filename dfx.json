@@ -1,16 +1,23 @@
 {
   "canisters": {
+    "internet_identity": {
+      "type": "custom",
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz",
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "frontend": {}
+    },
     "post2earn-apps-backend": {
       "main": "src/post2earn-apps-backend/main.mo",
       "type": "motoko"
     },
     "post2earn-apps-frontend": {
-      "dependencies": [
-        "post2earn-apps-backend"
-      ],
-      "source": [
-        "src/post2earn-apps-frontend/dist"
-      ],
+      "dependencies": ["post2earn-apps-backend"],
+      "source": ["src/post2earn-apps-frontend/dist"],
       "type": "assets",
       "workspace": "post2earn-apps-frontend"
     }
