@@ -1,5 +1,8 @@
 import { AuthClient } from "@dfinity/auth-client";
 import { HttpAgent } from "@dfinity/agent";
+import { useNavigate } from 'react-router-dom'
+
+
 
 export const initAuth = async () => {
   const authClient = await AuthClient.create();
@@ -12,7 +15,7 @@ export const initAuth = async () => {
 export const login = async () => {
   const authClient = await AuthClient.create();
   await authClient.login({
-    identityProvider: `http://${process.env.CANISTER_ID_INTERNET_IDENTITY}.localhost:4943/` || "https://identity.ic0.app",
+    identityProvider: `http://${process.env.CANISTER_ID_INTERNET_IDENTITY}.localhost:4943` || "https://identity.ic0.app",
     onSuccess: () => {
       window.location.reload();
     },
